@@ -1,0 +1,23 @@
+# Blackwall Ghost — generated from themes/blackwall-ghost.json
+background = #000000
+foreground = #f0f1ec
+cursor-color = #efa59f
+cursor-text = #000000
+selection-background = #222222
+selection-foreground = #f0f1ec
+palette = 0=#000000
+palette = 1=#ee9292
+palette = 2=#acdb8a
+palette = 3=#e8bd78
+palette = 4=#86b7e0
+palette = 5=#d89bcb
+palette = 6=#80cfd9
+palette = 7=#f0f1ec
+palette = 8=#aca2a6
+palette = 9=#f2adad
+palette = 10=#c1e4a7
+palette = 11=#eece9a
+palette = 12=#a4c9e8
+palette = 13=#e2b4d8
+palette = 14=#a0dbe2
+palette = 15=#f5f7f6
