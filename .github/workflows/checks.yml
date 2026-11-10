@@ -1,0 +1,26 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test independent app settings and installation
+        run: python3 -m unittest discover -s tests -v
+      - name: Verify generated desktop themes
+        run: |
+          python3 scripts/build-themes.py
+          git diff --exit-code -- themes
