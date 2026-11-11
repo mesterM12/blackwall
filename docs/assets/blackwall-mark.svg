@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwall mark</title>
+  <desc id="desc">A cyberpunk shield with a neon yellow and mint circuit line.</desc>
+  <defs>
+    <linearGradient id="glow" x1="18" y1="10" x2="78" y2="86" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8cd62"/><stop offset="1" stop-color="#7bd8ae"/>
+    </linearGradient>
+  </defs>
+  <path d="M48 7 80 19v25c0 21-13 36-32 45C29 80 16 65 16 44V19L48 7Z" fill="#050706" stroke="#303a36" stroke-width="3"/>
+  <path d="m29 48 12 12 26-28" fill="none" stroke="url(#glow)" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M25 29h46M25 68h46" stroke="#303a36" stroke-width="2"/>
+</svg>

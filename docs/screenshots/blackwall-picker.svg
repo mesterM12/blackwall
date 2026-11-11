@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwall theme picker</title>
+  <desc id="desc">A terminal-style screenshot showing Blackwall's app and theme pickers.</desc>
+  <defs>
+    <linearGradient id="bar" x1="0" x2="1"><stop stop-color="#e8cd62"/><stop offset="1" stop-color="#7bd8ae"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="720" fill="#020303"/>
+  <rect x="42" y="34" width="1116" height="652" rx="18" fill="#070a09" stroke="#303a36" stroke-width="2"/>
+  <rect x="42" y="34" width="1116" height="48" rx="18" fill="#0d1210"/>
+  <circle cx="76" cy="58" r="7" fill="#ee9292"/><circle cx="100" cy="58" r="7" fill="#e8cd62"/><circle cx="124" cy="58" r="7" fill="#7bd8ae"/>
+  <text x="600" y="64" text-anchor="middle" fill="#b0bcb5" font-family="SFMono-Regular,Menlo,monospace" font-size="16">blackwall — terminal</text>
+  <rect x="112" y="126" width="976" height="492" rx="10" fill="#000" stroke="#3b4741"/>
+  <text x="154" y="172" fill="#e8cd62" font-family="SFMono-Regular,Menlo,monospace" font-size="22" font-weight="700">BLACKWALL</text>
+  <text x="154" y="204" fill="#adb9b4" font-family="SFMono-Regular,Menlo,monospace" font-size="16">01 / Choose an app</text>
+  <text x="154" y="252" fill="#7bd8ae" font-family="SFMono-Regular,Menlo,monospace" font-size="18">▸</text>
+  <text x="184" y="252" fill="#f0f1ec" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[S]  Starship    Shell prompt     · custom</text>
+  <text x="184" y="292" fill="#b7b2c2" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[Z]  Zed         Code editor      · Blackwall Moonwire</text>
+  <text x="184" y="332" fill="#b7b2c2" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[G]  Ghostty     Terminal         · default</text>
+  <line x1="154" y1="372" x2="1046" y2="372" stroke="#303a36"/>
+  <text x="154" y="414" fill="#adb9b4" font-family="SFMono-Regular,Menlo,monospace" font-size="16">02 / Ghostty · Choose a theme</text>
+  <text x="184" y="458" fill="#e8cd62" font-family="SFMono-Regular,Menlo,monospace" font-size="18">◆  Overdrive   David         yellow / mint</text>
+  <text x="184" y="498" fill="#c3b5e8" font-family="SFMono-Regular,Menlo,monospace" font-size="18">◆  Moonwire   Lucy          lavender / cyan</text>
+  <text x="184" y="538" fill="#83d5b0" font-family="SFMono-Regular,Menlo,monospace" font-size="18">◆  Riot       Rebecca       mint / pink</text>
+  <text x="184" y="578" fill="#efa59f" font-family="SFMono-Regular,Menlo,monospace" font-size="18">◆  Ghost      Adam Smasher  red / silver</text>
+  <rect x="154" y="600" width="892" height="3" fill="url(#bar)" opacity=".9"/>
+</svg>

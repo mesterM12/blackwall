@@ -1,117 +1,136 @@
-# Blackwall
+<p align="center">
+  <img src="docs/assets/blackwall-mark.png" alt="Blackwall" width="112" />
+</p>
 
-A Cyberpunk theme picker for **Starship**, **Zed**, and **Ghostty**.
-Choose an app, then choose an Edgerunners-inspired palette. Each app changes
-independently.
+<h1 align="center">Blackwall</h1>
 
-Pure-black backgrounds, restrained Cyberpunk / Edgerunners accents, fine borders,
-and Nerd Font icons. Built with Python 3 and an optional fzf picker.
+<p align="center">
+  A cyberpunk theme picker for <a href="https://starship.rs/">Starship</a>, <a href="https://zed.dev/">Zed</a>, and <a href="https://ghostty.org/">Ghostty</a>.
+  <br />Choose a palette once and keep your shell, editor, and terminal in the same world.
+</p>
 
-| Theme | Character | Colors |
+<p align="center">
+  <a href="https://github.com/mesterM12/blackwall/actions/workflows/checks.yml"><img src="https://github.com/mesterM12/blackwall/actions/workflows/checks.yml/badge.svg" alt="Checks status" /></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white" alt="Python 3.9 or newer" /></a>
+  <img src="https://img.shields.io/badge/dependencies-zero-7bd8ae" alt="Zero runtime dependencies" />
+  <a href="https://github.com/mesterM12/blackwall"><img src="https://img.shields.io/github/last-commit/mesterM12/blackwall?color=e8cd62" alt="Last commit" /></a>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/blackwall-picker.png" alt="Blackwall's terminal picker showing app and palette choices" width="900" />
+</p>
+
+## What it does
+
+Blackwall applies four dark, cyberpunk palettes independently to the tools you use every day:
+
+| Palette | Character cue | Accent rail |
 | --- | --- | --- |
-| Overdrive | David | Yellow / mint |
-| Moonwire | Lucy | Lavender / cyan |
-| Riot | Rebecca | Mint / pink |
-| Ghost | Adam Smasher | Red / silver |
+| **Overdrive** | David | Yellow + mint |
+| **Moonwire** | Lucy | Lavender + cyan |
+| **Riot** | Rebecca | Mint + pink |
+| **Ghost** | Adam Smasher | Red + silver |
 
-## Requirements
-
-- Python **3.9+**; no Python packages to install.
-- [fzf](https://github.com/junegunn/fzf) for the interactive picker; a numbered
-  menu is available without it.
-- A Nerd Font, such as FiraCode Nerd Font, for the icons.
-- The app you want to theme. Starship must already be enabled in your shell.
-
-Designed and verified on macOS. The CLI uses the paths listed below; custom
-`XDG_CONFIG_HOME` and `STARSHIP_CONFIG` locations are currently unsupported.
+It updates only the selected app, backs up files before changing them, and leaves unrelated settings (including Pi) alone. Zed JSONC comments and trailing commas are preserved. The generated Starship, Zed, and Ghostty presets are checked into the repository so they can be reviewed and reproduced.
 
 ## Install
 
+### Requirements
+
+- Python **3.9+** (standard library only)
+- [fzf](https://github.com/junegunn/fzf) for the keyboard picker (optional; a numbered menu is used without it)
+- A [Nerd Font](https://www.nerdfonts.com/) for the terminal icons
+- At least one of Starship, Zed, or Ghostty already installed and configured
+
+Blackwall currently targets the standard macOS config paths. Custom `XDG_CONFIG_HOME` and `STARSHIP_CONFIG` locations are not supported.
+
+### From a checkout
+
 ```sh
-gh repo clone mesterM12/blackwall ~/Development/blackwall
-cd ~/Development/blackwall
+git clone https://github.com/mesterM12/blackwall.git
+cd blackwall
 python3 scripts/install.py
 blackwall
 ```
 
-If you already cloned the repository, run the installer from that checkout.
-
-The installer links `~/.local/bin/blackwall` directly to `bin/blackwall` in this
-repository. Keep the checkout in place. If the command is not found, add
-`export PATH="$HOME/.local/bin:$PATH"` to your shell configuration and open a
-new terminal. The installer preserves an existing launcher in the backup folder.
-
-## Use
+The installer creates `~/.local/bin/blackwall` as a symlink to this checkout. Add the following to your shell profile if that directory is not on `PATH`:
 
 ```sh
-blackwall               # choose app, then theme
-blackwall zed           # go straight to Zed's theme picker
-blackwall ghostty lucy  # select Moonwire for Ghostty
-blackwall status        # show each app's selection
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
-Use arrow keys and Enter in the picker; Escape cancels. Theme names are
-`overdrive`, `moonwire`, `riot`, and `ghost`. Character aliases `david`, `lucy`,
-`rebecca`, `smasher`, and `adam` also work.
+Keep the checkout in place while you use the command. Re-running the installer is safe and preserves an existing launcher in `~/.config/blackwall/backups/`.
 
-Starship updates at the next prompt. Zed watches its settings. In Ghostty on
-macOS, press **Cmd+Shift+,** to reload its configuration.
+## Use it
 
-The tool updates the selected app under `~/.config/` and backs up changed files
-under `~/.config/blackwall/backups/`. Other apps and Pi keep their themes. Zed
-comments, trailing commas, and unrelated preferences are preserved. Starship
-selection replaces its prompt config with the bundled character preset.
+```sh
+blackwall                    # choose an app, then a palette
+blackwall zed                # open Zed's palette picker
+blackwall ghostty lucy       # apply Moonwire to Ghostty
+blackwall status             # show each app's current selection
+```
 
-## Settings and backups
+Theme names are `overdrive`, `moonwire`, `riot`, and `ghost`. Character aliases are also accepted: `david`, `lucy`, `rebecca`, `smasher`, and `adam`.
 
-| App | Settings | Installed theme assets |
-| --- | --- | --- |
-| Starship | `~/.config/starship.toml` | Preset is copied into its settings file |
-| Zed | `~/.config/zed/settings.json` | `~/.config/zed/themes/blackwall.json` |
-| Ghostty | `~/.config/ghostty/config` | `~/.config/ghostty/themes/Blackwall-<Theme>` |
+<p align="center">
+  <img src="docs/screenshots/blackwall-status.png" alt="Blackwall applying Moonwire and reporting current app selections" width="900" />
+</p>
 
-Changed files are saved under
-`~/.config/blackwall/backups/<timestamp>/`, keeping their paths relative to your
-home folder. To restore a previous setting, copy that file back to its original
-location and reload the app. For example, a Starship backup is stored as
-`<timestamp>/.config/starship.toml`.
+After applying a palette:
 
-To update this checkout:
+- Starship uses it at the next prompt.
+- Zed watches its settings and refreshes automatically.
+- Ghostty on macOS reloads with <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>,</kbd>.
+
+Each change is written under `~/.config/` and the previous files are copied to `~/.config/blackwall/backups/<timestamp>/`, keeping their home-relative paths. Restore a backup by copying the file back to its original location and reloading the app.
+
+## How the repository is organized
+
+```text
+blackwall/
+├── bin/blackwall             # CLI, picker, status, backups, and config updates
+├── themes/                   # source palettes and generated app presets
+│   ├── blackwall-*.json      # palette source files
+│   ├── ghostty/              # generated Ghostty themes
+│   ├── starship/             # generated Starship prompts
+│   └── zed/                  # generated Zed theme family
+├── scripts/build-themes.py   # regenerate app presets from source palettes
+├── scripts/install.py        # install/update the ~/.local/bin launcher
+├── tests/test_cli.py         # isolated-home behavior tests
+└── .github/workflows/        # Python 3.9 and 3.14 checks
+```
+
+## Develop
+
+The project has no runtime package dependencies. From the repository root:
+
+```sh
+python3 scripts/build-themes.py
+python3 -m unittest discover -s tests -v
+```
+
+`build-themes.py` is deterministic. CI regenerates the committed assets and fails if the working tree changes, which keeps the source palettes and app presets in sync.
+
+## Backups and removal
+
+To update an existing checkout:
 
 ```sh
 git pull --ff-only
 ```
 
-The command already links to the source, so CLI updates take effect immediately.
-Select a theme again to apply updated presets to an app.
+The launcher already points at the checkout, so the updated CLI is available immediately. Re-apply a palette to pick up regenerated presets.
 
-To remove the command:
+To remove the command while keeping app settings and backups:
 
 ```sh
 rm ~/.local/bin/blackwall
 ```
 
-This removes the launcher link. Installed app settings and backups remain; restore
-backed-up settings separately if desired.
+## License
 
-## Develop
+No license file is included yet. Add a `LICENSE` file before redistributing Blackwall under an open-source license.
 
-The CLI and every required theme are contained in this repository. It has no
-runtime dependency on pi-choom, Codex folders, or the original checkout.
-
-- `bin/blackwall`: CLI, app selection, config updates and backups.
-- `themes/blackwall-*.json`: source palettes, originally developed alongside Pi.
-- `themes/{starship,zed,ghostty}/`: generated desktop presets.
-- `scripts/build-themes.py`: rebuild desktop presets from source palettes.
-- `scripts/install.py`: link the command to this checkout.
-
-```sh
-python3 scripts/build-themes.py
-python3 -m unittest discover -s tests
-```
-
-Rebuilding does not change app settings. Run `blackwall` to apply an updated
-preset. Tests use temporary home folders and do not touch your real settings.
-
-GitHub Actions runs the isolated tests on Python 3.9 and 3.14 and checks that the
-committed desktop presets match the palette generator.
+<p align="center">
+  <sub>Built for terminal people who like their interfaces quiet, dark, and a little dangerous.</sub>
+</p>

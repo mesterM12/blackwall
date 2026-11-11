@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwall status command</title>
+  <desc id="desc">A terminal-style screenshot showing Blackwall status and a successful theme selection.</desc>
+  <defs><linearGradient id="bar" x1="0" x2="1"><stop stop-color="#e8cd62"/><stop offset="1" stop-color="#7bd8ae"/></linearGradient></defs>
+  <rect width="1200" height="620" fill="#020303"/>
+  <rect x="42" y="34" width="1116" height="552" rx="18" fill="#070a09" stroke="#303a36" stroke-width="2"/>
+  <rect x="42" y="34" width="1116" height="48" rx="18" fill="#0d1210"/>
+  <circle cx="76" cy="58" r="7" fill="#ee9292"/><circle cx="100" cy="58" r="7" fill="#e8cd62"/><circle cx="124" cy="58" r="7" fill="#7bd8ae"/>
+  <text x="600" y="64" text-anchor="middle" fill="#b0bcb5" font-family="SFMono-Regular,Menlo,monospace" font-size="16">blackwall — terminal</text>
+  <rect x="112" y="126" width="976" height="380" rx="10" fill="#000" stroke="#3b4741"/>
+  <text x="154" y="174" fill="#7bd8ae" font-family="SFMono-Regular,Menlo,monospace" font-size="17">$ blackwall ghostty moonwire</text>
+  <text x="154" y="220" fill="#c3b5e8" font-family="SFMono-Regular,Menlo,monospace" font-size="20">[G] Ghostty → Blackwall Moonwire</text>
+  <text x="154" y="254" fill="#adb9b4" font-family="SFMono-Regular,Menlo,monospace" font-size="16">Press Cmd+Shift+, in Ghostty to reload its colors.</text>
+  <text x="154" y="316" fill="#7bd8ae" font-family="SFMono-Regular,Menlo,monospace" font-size="17">$ blackwall status</text>
+  <text x="154" y="362" fill="#e8cd62" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[S] Starship  Blackwall Overdrive</text>
+  <text x="154" y="400" fill="#c3b5e8" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[Z] Zed       Blackwall Moonwire</text>
+  <text x="154" y="438" fill="#efa59f" font-family="SFMono-Regular,Menlo,monospace" font-size="18">[G] Ghostty   Blackwall Moonwire</text>
+  <rect x="154" y="472" width="892" height="3" fill="url(#bar)" opacity=".9"/>
+</svg>
